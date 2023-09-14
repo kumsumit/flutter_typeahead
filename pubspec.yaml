@@ -9,9 +9,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_keyboard_visibility:
-    git: 
-      url: https://github.com/kumsumit/flutter_keyboard_visibility.git
-      path: flutter_keyboard_visibility
+    git: https://github.com/kumsumit/flutter_keyboard_visibility.git
   pointer_interceptor: ^0.9.3+6
 
 dev_dependencies:
