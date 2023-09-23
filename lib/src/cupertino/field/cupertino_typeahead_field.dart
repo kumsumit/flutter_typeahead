@@ -317,7 +317,7 @@ class CupertinoTypeAheadField<T> extends StatefulWidget {
   final void Function(bool)? onSuggestionsBoxToggle;
 
   /// Creates a [CupertinoTypeAheadField]
-  CupertinoTypeAheadField.paged({
+  const CupertinoTypeAheadField.paged({
     Key? key,
     required SuggestionsLoadMoreCallback<T> suggestionsLoadMoreCallback,
     required this.itemBuilder,
@@ -349,8 +349,8 @@ class CupertinoTypeAheadField<T> extends StatefulWidget {
     this.hideKeyboardOnDrag = true,
     this.onSuggestionsBoxToggle,
     this.ignoreAccessibleNavigation = false,
-  })  : this.suggestionsLoadMoreCallback = suggestionsLoadMoreCallback,
-        this.suggestionsCallback = null,
+  })  : suggestionsLoadMoreCallback = suggestionsLoadMoreCallback,
+        suggestionsCallback = null,
         assert(animationStart >= 0.0 && animationStart <= 1.0),
         assert(
             direction == AxisDirection.down || direction == AxisDirection.up),
@@ -360,7 +360,7 @@ class CupertinoTypeAheadField<T> extends StatefulWidget {
         super(key: key);
 
   /// Creates a [CupertinoTypeAheadField]
-  CupertinoTypeAheadField({
+  const CupertinoTypeAheadField({
     Key? key,
     required SuggestionsCallback<T> suggestionsCallback,
     required this.itemBuilder,
@@ -392,8 +392,8 @@ class CupertinoTypeAheadField<T> extends StatefulWidget {
     this.hideKeyboardOnDrag = true,
     this.onSuggestionsBoxToggle,
     this.ignoreAccessibleNavigation = false,
-  })  : this.suggestionsCallback = suggestionsCallback,
-        this.suggestionsLoadMoreCallback = null,
+  })  : suggestionsCallback = suggestionsCallback,
+        suggestionsLoadMoreCallback = null,
         assert(animationStart >= 0.0 && animationStart <= 1.0),
         assert(
             direction == AxisDirection.down || direction == AxisDirection.up),

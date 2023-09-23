@@ -36,7 +36,7 @@ class _MyAppState extends State<MyApp> {
                     isCupertino = true;
                   }),
                 ),
-                title: TabBar(
+                title: const TabBar(
                   isScrollable: true,
                   tabs: [
                     Tab(text: 'Example 1: Navigation'),
@@ -296,7 +296,7 @@ class BackendService {
 
   static Future<List<Map<String, String>>> getPagedSuggestions(String query,
       [int? page]) async {
-    await Future<void>.delayed(Duration(seconds: 1));
+    await Future<void>.delayed(const Duration(seconds: 1));
     return List.generate(20, (index) {
       return {
         'name': query + index.toString(),
@@ -495,10 +495,10 @@ class _PullToLoadMorePage extends State<PullToLoadMorePage> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(32.0),
+      padding: const EdgeInsets.all(32.0),
       child: Column(
         children: <Widget>[
-          SizedBox(
+          const SizedBox(
             height: 10.0,
           ),
           TypeAheadField.paged(
@@ -508,7 +508,7 @@ class _PullToLoadMorePage extends State<PullToLoadMorePage> {
               style: DefaultTextStyle.of(context)
                   .style
                   .copyWith(fontStyle: FontStyle.italic),
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: 'What are you looking for?'),
             ),
@@ -519,13 +519,13 @@ class _PullToLoadMorePage extends State<PullToLoadMorePage> {
             //minCharsForSuggestions: 2,
             itemBuilder: (context, Map<String, String> suggestion) {
               return ListTile(
-                leading: Icon(Icons.shopping_cart),
+                leading: const Icon(Icons.shopping_cart),
                 title: Text(suggestion['name']!),
                 subtitle: Text('\$${suggestion['price']}'),
               );
             },
             itemSeparatorBuilder: (context, index) {
-              return Divider();
+              return const Divider();
             },
             transitionBuilder: (context, suggestionsBox, controller) {
               return suggestionsBox;

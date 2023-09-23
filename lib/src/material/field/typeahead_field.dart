@@ -567,7 +567,7 @@ class TypeAheadField<T> extends StatefulWidget {
   final void Function(bool)? onSuggestionsBoxToggle;
 
   /// Creates a [TypeAheadField] with page support
-  TypeAheadField.paged({
+  const TypeAheadField.paged({
     required SuggestionsLoadMoreCallback<T> suggestionsLoadMoreCallback,
     required this.itemBuilder,
     this.itemSeparatorBuilder,
@@ -604,8 +604,8 @@ class TypeAheadField<T> extends StatefulWidget {
     this.ignoreAccessibleNavigation = false,
     this.showKeyboadAfterPressAgain = false,
     super.key,
-  })  : this.suggestionsLoadMoreCallback = suggestionsLoadMoreCallback,
-        this.suggestionsCallback = null,
+  })  : suggestionsLoadMoreCallback = suggestionsLoadMoreCallback,
+        suggestionsCallback = null,
         assert(animationStart >= 0.0 && animationStart <= 1.0),
         assert(
             direction == AxisDirection.down || direction == AxisDirection.up),
@@ -628,7 +628,7 @@ class TypeAheadField<T> extends StatefulWidget {
             "keepSuggestionsOnSuggestionSelected = false \n");
 
   /// Creates a [TypeAheadField]
-  TypeAheadField({
+  const TypeAheadField({
     required SuggestionsCallback<T> suggestionsCallback,
     required this.itemBuilder,
     this.itemSeparatorBuilder,
@@ -665,8 +665,8 @@ class TypeAheadField<T> extends StatefulWidget {
     this.ignoreAccessibleNavigation = false,
     this.showKeyboadAfterPressAgain = false,
     super.key,
-  })  : this.suggestionsCallback = suggestionsCallback,
-        this.suggestionsLoadMoreCallback = null,
+  })  : suggestionsCallback = suggestionsCallback,
+        suggestionsLoadMoreCallback = null,
         assert(animationStart >= 0.0 && animationStart <= 1.0),
         assert(
             direction == AxisDirection.down || direction == AxisDirection.up),

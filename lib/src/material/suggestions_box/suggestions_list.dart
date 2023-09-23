@@ -243,12 +243,13 @@ class _SuggestionsListState<T> extends State<SuggestionsList<T>>
       Object? error;
 
       try {
-        if (widget.suggestionsCallback != null)
+        if (widget.suggestionsCallback != null) {
           suggestions =
               await widget.suggestionsCallback!(widget.controller!.text);
-        else
+        } else {
           suggestions = await widget.suggestionsLoadMoreCallback!(
               widget.controller!.text, this._page);
+        }
       } catch (e) {
         error = e;
       }
